@@ -1,0 +1,51 @@
+// ATM Matine.cpp 
+// check balance, Diposit,Withdrow.
+
+#include <iostream>
+using namespace std;
+void ShowMenu() {
+    cout << "********Menu********" << endl;
+    cout << "1.Check Balance" << endl;
+    cout << "2.Diposit" << endl;
+    cout << "3.Withdrow" << endl;
+    cout << "4.Exit" << endl;
+    cout << "***********************" << endl;
+}
+
+int main() {
+    
+    int option; double balance = 100;
+    do {
+        ShowMenu();
+        cout << "Option" << endl;
+        cin >> option;
+        system("cls");
+        switch (option) {
+        case 1:
+            cout << "Balance:- " << balance << "Taka" << endl;
+            break;
+        case 2:
+            cout << "Dipoosit Amount" << endl;
+            double dipositamount;
+            cin >> dipositamount;
+            balance += dipositamount;
+            break;
+        case 3:
+            cout << "Withdrow Amount" << endl;
+            double withdrowamount;
+            cin >> withdrowamount;
+
+            if (withdrowamount <= balance) {
+                balance -= withdrowamount;
+            }
+
+            else {
+
+                cout << "Not Enough Money" << endl;
+            }
+            break;
+        }
+    } while (option != 4);
+
+  
+}
